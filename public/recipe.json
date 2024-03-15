@@ -51,6 +51,6 @@
     "short_description": "Classic homemade cookies with chocolate chips",
     "ingredients_in_an_array": ["Flour", "Butter", "Sugar", "Chocolate Chips", "Eggs", "Vanilla Extract"],
     "preparing_time": "35 minutes",
-    "calories": "150 calories per cookie"
+    "calories": "150 calories"
   }
 ]
