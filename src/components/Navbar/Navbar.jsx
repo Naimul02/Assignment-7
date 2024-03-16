@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="flex-1 items-center">
         <a className="btn btn-ghost text-2xl font-semibold">Recipe Calories</a>
 
-        <div className="md:ml-28 hidden">
+        <div className="md:ml-28 hidden lg:block">
           <ul className="flex gap-4 text-lg">
             <li>
               <a href="">Home</a>
