@@ -1,5 +1,6 @@
 [
   {
+    
     "recipe_img": "https://i.ibb.co/jLZb48v/jed-owen-q6-Y8-Xr3-So-QA-unsplash.jpg",
     "recipe_id": "1",
     "recipe_name": "Spaghetti Carbonara",
@@ -9,6 +10,7 @@
     "calories": "400 calories"
   },
   {
+    
     "recipe_img": "https://i.ibb.co/ryMb7jF/ca-creative-bp-PTl-XWTOvg-unsplash.jpg",
     "recipe_id": "2",
     "recipe_name": "Chicken Stir Fry",
@@ -18,6 +20,7 @@
     "calories": "350 calories"
   },
   {
+    
     "recipe_img": "https://i.ibb.co/qLGkKTc/nikolay-smeh-g-Ppb-Fa-Ekl00-unsplash.jpg",
     "recipe_id": "3",
     "recipe_name": "Caprese Salad",
@@ -27,6 +30,7 @@
     "calories": "200 calories"
   },
   {
+    
     "recipe_img": "https://i.ibb.co/1822Zzz/Rectangle-20170.png",
     "recipe_id": "4",
     "recipe_name": "Vegetable Curry",

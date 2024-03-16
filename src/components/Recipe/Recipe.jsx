@@ -1,8 +1,8 @@
 import React from "react";
 import { MdOutlineAccessTime } from "react-icons/md";
 
-const Recipe = ({ recipe }) => {
-  console.log(recipe);
+const Recipe = ({ recipe, handleRecipes }) => {
+  // console.log(recipe);
   const {
     recipe_img,
     recipe_name,
@@ -25,8 +25,8 @@ const Recipe = ({ recipe }) => {
             Ingredients: {ingredients_in_an_array.length}
           </h2>
           <ul>
-            {ingredients_in_an_array.map((ingredient) => (
-              <li>{ingredient}</li>
+            {ingredients_in_an_array.map((ingredient, idx) => (
+              <li key={idx}>{ingredient}</li>
             ))}
           </ul>
         </div>
@@ -42,7 +42,10 @@ const Recipe = ({ recipe }) => {
           </div>
         </div>
         <div className="card-actions mt-3">
-          <button className="btn bg-slate-600 text-white hover:text-black px-10  rounded-full">
+          <button
+            className="btn bg-slate-600 text-white hover:text-black px-10  rounded-full"
+            onClick={() => handleRecipes(recipe)}
+          >
             Want to Cook
           </button>
         </div>

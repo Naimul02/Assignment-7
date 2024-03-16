@@ -4,14 +4,21 @@ import Recipe from "../Recipe/Recipe";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [selectedRecipes, setSelectedRecipes] = useState([]);
+
   useEffect(() => {
     fetch("recipe.json")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
 
+  const handleRecipes = (recipe) => {
+    const newRecipe = [...selectedRecipes, recipe];
+    setSelectedRecipes(newRecipe)
+  };
+
   return (
-    <div className="max-w-6xl mx-auto my-10">
+    <div className="max-w-7xl mx-auto my-10">
       <div className="text-center max-w-[700px] mx-auto space-y-4">
         <h1 className="text-5xl font-semibold">Our Recipes</h1>
         <p>
@@ -21,14 +28,20 @@ const Recipes = () => {
         </p>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 mt-6">
         <div className="recipe-container grid gap-4 grid-cols-1 lg:grid-cols-2 lg:w-2/3">
           {recipes.map((recipe) => (
-            <Recipe recipe={recipe}></Recipe>
+            <Recipe
+              key={recipe.recipe_id}
+              recipe={recipe}
+              handleRecipes={handleRecipes}
+            ></Recipe>
           ))}
         </div>
 
-        <Cooks></Cooks>
+        <Cooks
+          selectedRecipes={selectedRecipes}
+        ></Cooks>
       </div>
     </div>
   );
