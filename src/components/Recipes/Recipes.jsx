@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Cooks from "../Cooks/Cooks";
 import Recipe from "../Recipe/Recipe";
+import toast from "react-hot-toast";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -19,7 +20,7 @@ const Recipes = () => {
       const newRecipe = [...selectedRecipes, recipe];
       setSelectedRecipes(newRecipe);
     } else {
-      alert("Already in cart");
+      toast.error("Already exist");
     }
   };
 

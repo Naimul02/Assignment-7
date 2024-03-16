@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 const Cooks = ({ selectedRecipes }) => {
   console.log(selectedRecipes);
@@ -30,6 +31,7 @@ const Cooks = ({ selectedRecipes }) => {
                     <button className="btn bg-green-400 hover:text-black text-white">
                       Preparing
                     </button>
+                    <Toaster position="top-right" reverseOrder={false} />
                   </td>
                 </tr>
               );
