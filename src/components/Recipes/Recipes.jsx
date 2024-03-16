@@ -7,6 +7,9 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipes, setSelectedRecipes] = useState([]);
 
+  const [removeRecipes, setRemoveRecipes] = useState([]);
+  // console.log(removeRecipes);
+
   useEffect(() => {
     fetch("recipe.json")
       .then((res) => res.json())
@@ -15,13 +18,22 @@ const Recipes = () => {
 
   const handleRecipes = (recipe, id) => {
     const isExist = selectedRecipes.find((sr) => sr.recipe_id === id);
-    console.log(isExist);
+
     if (!isExist) {
       const newRecipe = [...selectedRecipes, recipe];
       setSelectedRecipes(newRecipe);
     } else {
       toast.error("Already exist");
     }
+  };
+
+  const handleRemoveRecipes = (recipe) => {
+    const deleteRecipe = selectedRecipes.filter(
+      (sr) => sr.recipe_id !== recipe.recipe_id
+    );
+    setSelectedRecipes(deleteRecipe);
+
+    setRemoveRecipes([...removeRecipes, recipe]);
   };
 
   return (
@@ -46,7 +58,11 @@ const Recipes = () => {
           ))}
         </div>
 
-        <Cooks selectedRecipes={selectedRecipes}></Cooks>
+        <Cooks
+          selectedRecipes={selectedRecipes}
+          handleRemoveRecipes={handleRemoveRecipes}
+          removeRecipes={removeRecipes}
+        ></Cooks>
       </div>
     </div>
   );
