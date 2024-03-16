@@ -24,7 +24,7 @@ const Recipe = ({ recipe, handleRecipes }) => {
           <h2 className="text-lg font-semibold">
             Ingredients: {ingredients_in_an_array.length}
           </h2>
-          <ul>
+          <ul className="list-disc">
             {ingredients_in_an_array.map((ingredient, idx) => (
               <li key={idx}>{ingredient}</li>
             ))}
@@ -37,14 +37,14 @@ const Recipe = ({ recipe, handleRecipes }) => {
             <span>{preparing_time}</span>
           </div>
           <div className="flex gap-1">
-            <img src="../../../src/assets/Frame.png" alt="img nai" />
+            <img src="https://i.ibb.co/x3bF9f6/Frame.png" alt="img nai" />
             <p>{calories}</p>
           </div>
         </div>
         <div className="card-actions mt-3">
           <button
             className="btn bg-slate-600 text-white hover:text-black px-10  rounded-full"
-            onClick={() => handleRecipes(recipe , recipe.recipe_id)}
+            onClick={() => handleRecipes(recipe, recipe.recipe_id)}
           >
             Want to Cook
           </button>
