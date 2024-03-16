@@ -12,9 +12,15 @@ const Recipes = () => {
       .then((data) => setRecipes(data));
   }, []);
 
-  const handleRecipes = (recipe) => {
-    const newRecipe = [...selectedRecipes, recipe];
-    setSelectedRecipes(newRecipe)
+  const handleRecipes = (recipe, id) => {
+    const isExist = selectedRecipes.find((sr) => sr.recipe_id === id);
+    console.log(isExist);
+    if (!isExist) {
+      const newRecipe = [...selectedRecipes, recipe];
+      setSelectedRecipes(newRecipe);
+    } else {
+      alert("Already in cart");
+    }
   };
 
   return (
@@ -29,7 +35,7 @@ const Recipes = () => {
       </div>
 
       <div className="flex gap-4 mt-6">
-        <div className="recipe-container grid gap-4 grid-cols-1 lg:grid-cols-2 lg:w-2/3">
+        <div className="recipe-container grid gap-4 grid-cols-1 lg:grid-cols-2 lg:w-[60%]">
           {recipes.map((recipe) => (
             <Recipe
               key={recipe.recipe_id}
@@ -39,9 +45,7 @@ const Recipes = () => {
           ))}
         </div>
 
-        <Cooks
-          selectedRecipes={selectedRecipes}
-        ></Cooks>
+        <Cooks selectedRecipes={selectedRecipes}></Cooks>
       </div>
     </div>
   );

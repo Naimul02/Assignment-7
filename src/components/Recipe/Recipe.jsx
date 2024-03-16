@@ -44,7 +44,7 @@ const Recipe = ({ recipe, handleRecipes }) => {
         <div className="card-actions mt-3">
           <button
             className="btn bg-slate-600 text-white hover:text-black px-10  rounded-full"
-            onClick={() => handleRecipes(recipe)}
+            onClick={() => handleRecipes(recipe , recipe.recipe_id)}
           >
             Want to Cook
           </button>
